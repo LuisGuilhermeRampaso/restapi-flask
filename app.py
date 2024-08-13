@@ -15,7 +15,7 @@ app.config['MONGODB_SETTINGS'] = {
 
 api = Api(app)
 
-#Initialize Do Banco
+ #Initialize Do Banco
 db = MongoEngine(app)
 
 
@@ -25,7 +25,7 @@ class UserModel(db.Document):
     last_name = db.StringField(required=True, max_length=50)
     email = db.StringField(required=True)
     birth_date = db.DateTimeField(required=True)
-    
+
 
 class Users(Resource):
     def get(self):
@@ -45,5 +45,5 @@ api.add_resource(User, '/user', '/user/<string:cpf>')
 
 #Adicionada rota 0.0.0.0 para no haver erros de conexao no conteiner
 
-if __name__ == '__main__':
-    app.run(debug=True , host ='0.0.0.0')
+if __name__=='__main__': 
+    app.run(debug=True, host ='0.0.0.0')
