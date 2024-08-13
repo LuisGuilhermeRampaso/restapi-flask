@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:5.0.8
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    restart: always
+
+  api:
+    build:
+      context: .
+    ports:
+      - 5000:5000
+    restart: always    
+    #Iniciar API depois do banco iniciado
+    depends_on:
+      - mongodb  
+    #Usado para detectar mudanças no app.py
+    volumes:
+      - .:/app  
