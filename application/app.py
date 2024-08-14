@@ -4,8 +4,6 @@ import re
 from mongoengine import NotUniqueError
 from .model import UserModel
 
-
-
 _user_parser = reqparse.RequestParser()
 _user_parser.add_argument('first_name',
                           type=str,
@@ -34,15 +32,6 @@ _user_parser.add_argument('birth_date',
                           )
 
 
-
-
-
- 
-
-
-
-
-
 class Users(Resource):
     def get(self):
         return jsonify(UserModel.objects())
@@ -51,7 +40,6 @@ class Users(Resource):
 class User(Resource):
 
     def validate_cpf(self, cpf):
-
         # Has the correct mask?
         if not re.match(r'\d{3}\.\d{3}\.\d{3}-\d{2}', cpf):
             return False
@@ -83,9 +71,9 @@ class User(Resource):
         data = _user_parser.parse_args()
 
         if not self.validate_cpf(data["cpf"]):
-            return{"message": "CPF is invalid"}, 400
+            return {"message": "CPF is invalid"}, 400
 
-        #Insertion in DataBase
+        # Insertion in DataBase
         # ** Unpacking (Removing colchetes - json)
         try:
             response = UserModel(**data).save()
@@ -93,14 +81,10 @@ class User(Resource):
         except NotUniqueError:
             return {"message": "CPF already exists in database!"}, 400
 
-        
-
     def get(self, cpf):
         response = UserModel.objects(cpf=cpf)
 
         if response:
             return jsonify(response)
 
-        return {"message": "User does not exist in database!"}, 400    
-    
-
+        return {"message": "User does not exist in database!"}, 400
