@@ -14,6 +14,8 @@ services:
       context: .
     ports:
       - 5000:5000
+    enviroment:
+      - FLASK_ENV=development  
     restart: always    
     #Iniciar API depois do banco iniciado
     depends_on:
