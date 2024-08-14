@@ -14,7 +14,7 @@ services:
       context: .
     ports:
       - 5000:5000
-    enviroment:
+    environment:
       - FLASK_ENV=development  
     restart: always    
     #Iniciar API depois do banco iniciado
@@ -22,4 +22,4 @@ services:
       - mongodb  
     #Usado para detectar mudanças no app.py
     volumes:
-      - .:/app  
+      - ./application:/app/application  
