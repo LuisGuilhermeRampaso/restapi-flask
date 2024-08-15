@@ -1,7 +1,5 @@
 from flask_mongoengine import MongoEngine
 
-
-# Initialize Do Banco
 db = MongoEngine()
 
 
