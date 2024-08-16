@@ -11,5 +11,6 @@ compose:
 
 
 heroku:
+	@heroku container:login
 	@sudo heroku container:push web --app restapi-project
 	@heroku container:release web --app restapi-project
