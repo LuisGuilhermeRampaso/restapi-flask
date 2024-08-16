@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.9'
@@ -23,4 +23,13 @@ jobs:
         run: 
           make test
 
- 
+  deploy:
+    needs: tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to heroku
+        run: make heroku
+        env:
+          HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
