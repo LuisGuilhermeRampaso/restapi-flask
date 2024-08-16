@@ -11,6 +11,6 @@ compose:
 
 
 heroku:
-	@sudo heroku container:login
-	@sudo heroku container:push web --app $(APP)
+	@heroku container:login
+	@heroku container:push web --app $(APP)
 	@heroku container:release web --app $(APP)
