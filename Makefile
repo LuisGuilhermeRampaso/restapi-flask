@@ -1,4 +1,4 @@
-APP = restapi
+APP = restapi-project
 
 test:
 	@flake8 . --exclude venv
@@ -11,6 +11,6 @@ compose:
 
 
 heroku:
-	@heroku container:login
-	@sudo heroku container:push web --app restapi-project
-	@heroku container:release web --app restapi-project
+	@sudo heroku container:login
+	@sudo heroku container:push web --app $(APP)
+	@heroku container:release web --app $(APP)
