@@ -19,14 +19,15 @@ class ProdConfig:
     MONGODB_DB = os.getenv('MONGODB_DB')
 
     MONGODB_SETTINGS = {
-
-        'host': 'mongodb+srv://%s:%s@%s/%s?retryWrites=true&w=majority&appName=ClusterAPI' % (
-            MONGODB_USER,
-            MONGODB_PASSWORD,
-            MONGODB_HOST,
-            MONGODB_DB
+        'host': (
+            'mongodb+srv://%s:%s@%s/%s'
+            '?retryWrites=true&w=majority&appName=ClusterAPI' % (
+                MONGODB_USER,
+                MONGODB_PASSWORD,
+                MONGODB_HOST,
+                MONGODB_DB
+            )
         )
-
     }
 
 
