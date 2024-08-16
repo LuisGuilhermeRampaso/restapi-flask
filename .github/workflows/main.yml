@@ -24,12 +24,18 @@ jobs:
           make test
 
   deploy:
-    
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to heroku
-        run: make heroku
-        env:
-          HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: Log in to Heroku
+      run: echo "$HEROKU_API_KEY" | docker login --username=_ --password-stdin registry.heroku.com
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+    - name: Deploy to Heroku
+      run: make heroku
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
