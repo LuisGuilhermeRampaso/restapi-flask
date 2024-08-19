@@ -46,6 +46,6 @@ A API estará acessível em http://localhost:5000
 Mencione as ferramentas que você usou para criar seu projeto
 
 * [Flask]() - O framework web usado
-* [MongoDB](https://mongodb.com/) - Gerente de Dependência
-* [Python]() - Usada para gerar RSS
-
+* [MongoDB](https://mongodb.com/) - Banco NoSQL
+* [Python]() - Linguagem Utilizada
+* [GitHub Actions] - Utilizado para automatizar deploy
