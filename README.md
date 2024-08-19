@@ -20,28 +20,6 @@ Este projeto é uma API REST simples construída com Flask, projetada para colet
 
 Clone o repositório:
 
-
+```bash
 git clone https://github.com/LuisGuilhermeRampaso/restapi-flask.git
 cd restapi-flask
-
-#Instale as dependências necessárias:
-
-pip install -r requirements.txt
-
-
-## Uso
-
-- **Criar Usuário:** Envie uma requisição POST para `/user` com um corpo JSON contendo os detalhes do usuário.
-- **Listar Usuários:** Envie uma requisição GET para `/users/` para recuperar todos os usuários.
-- **Recuperar Usuário:** Envie uma requisição GET para `/user/<cpf>` para recuperar os dados de um usuário específico pelo CPF.
-
-## Estrutura do Projeto
-
-- `app.py`: Arquivo principal da aplicação onde o app Flask é inicializado e as rotas são definidas.
-- `models.py`: Contém os modelos de dados e a lógica de interação com o MongoDB.
-- `config.py`: Arquivo de configuração para o MongoDB e outras configurações.
-
-## Contribuição
-
-Sinta-se à vontade para fazer um fork deste projeto e enviar pull requests. Qualquer contribuição é bem-vinda!
-
