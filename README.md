@@ -22,4 +22,9 @@ Clone o repositório:
 
 ```bash
 git clone https://github.com/LuisGuilhermeRampaso/restapi-flask.git
-cd restapi-flask'''
+cd restapi-flask
+
+#Instale as dependências necessárias:
+
+```bash
+pip install -r requirements.txt
