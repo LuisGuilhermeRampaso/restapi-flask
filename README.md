@@ -20,9 +20,9 @@ Este projeto é uma API REST simples construída com Flask, projetada para colet
 
 Clone o repositório:
 
-```bash
+
 git clone https://github.com/LuisGuilhermeRampaso/restapi-flask.git
-cd restapi-flask'''
+cd restapi-flask
 
 #Instale as dependências necessárias:
 
