@@ -102,4 +102,4 @@ Sinta-se à vontade para fazer um fork deste projeto e enviar pull requests. Qua
 Este projeto está licenciado sob a Licença MIT.
 ```
 
-Você pode copiar e colar este conteúdo diretamente no seu arquivo `README.md`. Se precisar de mais alguma coisa, é só me avisar!
+
